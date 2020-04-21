@@ -37,7 +37,7 @@ public class CodeGenerator {
         dsc.setUrl("jdbc:mysql://localhost:3306/msr_edu?serverTimezone=GMT%2B8");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("a62134787");
+        dsc.setPassword("123");
         dsc.setDbType(DbType.MYSQL);
         mpg.setDataSource(dsc);
 
