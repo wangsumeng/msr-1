@@ -10,6 +10,8 @@ import com.msr.eduservice.service.EduTeacherService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.io.Serializable;
+
 /**
  * <p>
  * 讲师 服务实现类
@@ -54,4 +56,11 @@ public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeac
 
         baseMapper.selectPage(pageParam, queryWrapper);
     }
+
+    @Override
+    public boolean removeById(Serializable id) {
+        Integer result = baseMapper.deleteById(id);
+        return null != result && result > 0;
+    }
+
 }

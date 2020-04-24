@@ -58,8 +58,14 @@ public class EduTeacherController {
     public R removeById(
             @ApiParam(name = "id", value = "讲师ID", required = true)
             @PathVariable String id){
-        boolean flag = teacherService.removeById(id);
-        return R.ok();
+       // boolean flag = teacherService.removeById(id);
+       // return R.ok();
+        boolean result = teacherService.removeById(id);
+        if(result){
+            return R.ok();
+        }else{
+            return R.error().message("删除失败");
+        }
     }
 
 
@@ -88,7 +94,7 @@ public class EduTeacherController {
     }
 
     @ApiOperation(value = "新增讲师")
-    @PostMapping
+    @PostMapping("save")
     public R save(
             @ApiParam(name = "teacher", value = "讲师对象", required = true)
             @RequestBody EduTeacher teacher){
